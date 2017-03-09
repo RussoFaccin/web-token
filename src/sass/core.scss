@@ -1,0 +1,19 @@
+@import 'reset';
+
+h1{
+  display: flex;
+  justify-content: center;
+  p{
+    margin: auto;
+    .color{
+      color: #FFF;
+    }
+    .tall{
+      align-items: center;
+    }
+    .low{
+      transform: translateX(200%);
+      border-radius: 10vw;
+    }
+  }
+}
