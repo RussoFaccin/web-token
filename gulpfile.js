@@ -15,7 +15,7 @@ var webpackconfig = require("./webpack.config.js");
     GENERAL TASKS
 ==================== */
 gulp.task('default', ["dist", "watcher", "browser-sync"]);
-gulp.task('dist', ["sass", "copy-img", "copy-html", "scripts"]);
+gulp.task('dist', ["sass", "copy-img", "copy-html", "scripts", "copy-back"]);
 
 /* ====================
     ESPECIFIC TASKS
@@ -41,6 +41,12 @@ gulp.task('copy-img', function(){
 gulp.task('copy-html', function(){
   gulp.src('src/*.html')
   .pipe(gulp.dest('dist/'))
+});
+
+//##### COPY-BACKEND
+gulp.task('copy-back', function(){
+  gulp.src('src/auth/*')
+  .pipe(gulp.dest('dist/auth'))
 });
 
 //##### SCRIPTS
