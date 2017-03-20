@@ -45,7 +45,7 @@ gulp.task('copy-html', function(){
 
 //##### COPY-BACKEND
 gulp.task('copy-back', function(){
-  gulp.src('src/auth/*')
+  gulp.src(['src/auth/*', 'src/auth/*/*'])
   .pipe(gulp.dest('dist/auth'))
 });
 
