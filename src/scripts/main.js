@@ -5,6 +5,7 @@ var btn_submit = document.getElementById('btn_create');
 var btn_verify = document.getElementById('btn_verify');
 btn_verify.style.display = "none";
 var message_box = document.getElementById('message');
+var msg_output = document.getElementById('msg-output');
 var SECRET = "EtCngPx6";
 
 btn_submit.onclick = function(){
@@ -34,7 +35,7 @@ function verifyToken(token) {
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
-            console.log("RESPONSE: "+this.responseText);
+          msg_output.innerHTML = this.responseText;
         }
     };
     xhttp.open("POST", "./auth/verifyuser.php", true);
